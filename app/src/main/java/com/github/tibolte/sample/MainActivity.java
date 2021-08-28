@@ -10,27 +10,23 @@ import com.github.tibolte.agendacalendarview.models.IDayItem;
 import com.github.tibolte.agendacalendarview.models.IWeekItem;
 import com.github.tibolte.agendacalendarview.models.WeekItem;
 
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 public class MainActivity extends AppCompatActivity implements CalendarPickerController {
 
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
-    @Bind(R.id.activity_toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.agenda_calendar_view)
     AgendaCalendarView mAgendaCalendarView;
 
     // region Lifecycle methods
@@ -39,9 +35,10 @@ public class MainActivity extends AppCompatActivity implements CalendarPickerCon
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-
         setSupportActionBar(mToolbar);
+
+        mToolbar = findViewById(R.id.activity_toolbar);
+        mAgendaCalendarView = findViewById(R.id.agenda_calendar_view);
 
         // minimum and maximum date of our calendar
         // 2 month behind, one year ahead, example: March 2015 <-> May 2015 <-> May 2016

@@ -1,9 +1,10 @@
 package com.github.tibolte.agendacalendarview.render;
 
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.github.tibolte.agendacalendarview.R;
 import com.github.tibolte.agendacalendarview.models.BaseCalendarEvent;
